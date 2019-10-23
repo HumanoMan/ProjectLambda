@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link rel="shortcut icon" href="Images/LogoLambda.png" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.css"/>
+        <title>Lambda - Endereço</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"/> 
+        <meta name="viewport" content="width=device-width"/>
+    </h:head>
+    <h:body class="bg-light  text-black">
+        <!-- Menu Principal -->
+         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+             <a class="navbar-brand" href="contatos.jsf"><img src="Images/LogoLambda2.png" style="width: 150px;"/></a>&emsp;&emsp;
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="outline: none;">
+            <span class="navbar-toggler-icon" style="outline: none;"></span>
+            </button>
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pessoa.jsf" style="letter-spacing: 0.5px;">Pessoa</a>
+                    </li>&emsp;&emsp;
+                    <li class="nav-item">
+                        <a class="nav-link" href="endereco.jsf" style="letter-spacing: 0.5px;">Endereço</a>
+                    </li>&emsp;&emsp;
+                    <li class="nav-item">
+                        <a class="nav-link" href="grupo.jsf" style="letter-spacing: 0.5px;">Grupo</a>
+                    </li>&emsp;&emsp;
+
+                    <!-- Lista de Links -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="letter-spacing: 0.5px;">
+                            Contatos
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="contato.jsf" style="letter-spacing: 0.5px;">Contato</a>
+                            <a class="dropdown-item" href="tipocontato.jsf" style="letter-spacing: 0.5px;">Tipo Contato</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Formulário endereço -->
+        <h:form class="offset-md-3" style="padding-right: 5px;">
+        <br/>
+    <h1>Cadastrar Endereço</h1>
+    <br/>
+         <div class="form-row">
+    <div class="form-group col-md-3"><!-- (col-md-"x") define o tamanho da caixa da texto -->
+      <label for="inputCEP">CEP</label>
+      <input type="text" class="form-control" id="cep" onkeypress="return onlynumber()" maxlength="8"/>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputlogradouro">Rua</label>
+      <input type="text" class="form-control" id="logradouro"/>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputCEP">Nº</label>
+      <input type="text" class="form-control" id="numero" maxlength="4"/>
+    </div>
+  </div>
+      <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputCity">Complemento</label>
+      <input type="text" class="form-control" id="inputComplemento"/>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputEstado">Bairro</label>
+      <input type="text" class="form-control" id="bairro"/>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputCity">Municipio</label>
+      <input type="text" class="form-control" id="municipio"/>
+    </div>
+  </div>
+    <div class="form-row"><!-- (form-row) define como adaptar ao tipo de tela.
+                          Nesse caso o form deixa as caixa de texto com width 100% -->
+    <div class="form-group col-md-4">
+      <label for="inputCity">Cidade</label>
+      <input type="text" class="form-control" id="cidade"/>
+    </div>
+        <div class="form-group col-md-2">
+      <label for="inputEstado">Estado</label>
+      <input type="text" class="form-control" id="uf"/>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputEstado">Pais</label>
+      <select id="pais" class="form-control">
+          <option>BR</option>
+          <option>URSS</option>
+      </select>
+    </div>
+  </div>
+</h:form>
+        <br/>
+        <div class="offset-md-3">   
+        <button type="submit" style="margin-top: 1%" class="btn btn-outline-dark">Voltar</button>
+        <a href="contatos.jsf"><button type="submit" style="margin-top: 1%" class="btn btn-outline-danger">Cancelar</button></a>
+        <button type="submit" style="margin-top: 1%" class="btn btn-outline-success">Gravar</button>
+        <button type="submit" style="margin-top: 1%" class="btn btn-outline-primary">+</button>
+        <button type="submit" style="margin-top: 1%" class="btn btn-outline-dark">Cadastrar</button>
+        <button type="submit" style="margin-top: 1%" class="btn btn-outline-dark">Proximo</button>
+    </div>
+    </h:body>
+    <script type="text/javascript">
+            function onlynumber(evt){
+                var theEvent = evt || window.event;
+                var key = theEvent.KeyCode || theEvent.which;
+                key = String.fromCharCode(key);
+                var regex = /^[0-9.]+$/;
+                if (!regex.test(key)){
+                    theEvent.returnValue = false;
+                    if (theEvent.preventDefault)
+                        theEvent.preventDefault();
+                }
+            }
+		$("#cep").focusout(function(){
+			//Início do Comando AJAX
+			$.ajax({
+				//O campo URL diz o caminho de onde virá os dados
+				//É importante concatenar o valor digitado no CEP
+				url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+				//Aqui você deve preencher o tipo de dados que será lido,
+				//no caso, estamos lendo JSON.
+				dataType: 'json',
+				//SUCESS é referente a função que será executada caso
+				//ele consiga ler a fonte de dados com sucesso.
+				//O parâmetro dentro da função se refere ao nome da variável
+				//que você vai dar para ler esse objeto.
+				success: function(resposta){
+					//Agora basta definir os valores que você deseja preencher
+					//automaticamente nos campos acima.
+					$("#logradouro").val(resposta.logradouro);
+					//$("#complemento").val(resposta.complemento);
+					$("#bairro").val(resposta.bairro);
+                                        $("#cidade").val(resposta.localidade);
+					$("#uf").val(resposta.uf);
+					$("#pais").val(resposta.pais);
+					//Vamos incluir para que o Número seja focado automaticamente
+					//melhorando a experiência do usuário
+					$("#numero").focus();
+				}
+			});
+                        
+		});
+	</script>
+</html>
+
